@@ -41,7 +41,8 @@ function Layout()
         newLayout();
         //layout =
     };
-    this.newLayout = addElement(element)
+
+    this.addElement = function(element)
     {
         addElement(element);
     };
