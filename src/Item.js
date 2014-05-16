@@ -1,29 +1,29 @@
-function Item()
+function Item(param)
 {
     var item;
-    var createItem = function(obj)
+    var createItem = function()
     {
         var itemCode = '<div class="item">'+
-            '<figure class="back">2</figure>'+
-            '<figure class="front">1</figure>'+
+            '<figure class="back">B</figure>'+
+            '<figure class="front">'+param.type+'</figure>'+
         '</div>';
         item = $(itemCode);
     };
 
-    this.createItem = function (obj)
+    this.createItem = function ()
     {
-        createItem(obj);
+        createItem();
         return item;
     };
 
-    this.show = function (obj)
+    this.show = function()
     {
         item.addClass('flipped');
     };
 
-    this.hide = function (obj)
+    this.hide = function()
     {
         item.removeClass('flipped');
-    }
+    };
 
 }
