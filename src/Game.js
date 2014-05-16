@@ -7,6 +7,7 @@ function Game()
     {
         var level = player.getLevel();
         var seizes = getSeizes(level);
+        layout.newLayout(seizes.horizontal, seizes.vertical);
         var scheme = getScheme(seizes.horizontal, seizes.vertical);
         for (var i = 0; i < scheme.length; i++) {
             for (var j = 0; j < scheme[i].length; j++) {
@@ -15,7 +16,7 @@ function Game()
                 };
                 var item = new Item(param);
                 var element = item.createItem();
-
+                layout.addElement(element);
                 scheme[i][j] = item;
             }
         }
@@ -75,7 +76,7 @@ function Game()
             }
             scheme.push(row);
         }
-        console.log(scheme);
+        console.table(scheme);
         return scheme;
     };
 
