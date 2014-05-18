@@ -11,5 +11,7 @@ function Player()
     this.addPoint = function(point)
     {
         points += point;
+        console.clear();
+        console.log(points);
     };
 }
