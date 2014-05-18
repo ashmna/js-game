@@ -1,31 +1,21 @@
-#stdiv {
-    width: 30px;
-    height: 30px;
-    border: 1px solid red;
-}
-
-#div {
-    width: 200px;
-    height: 260px;
-    margin: 100px;
-}
-
-.container {
-    width: 200px;
-    height: 260px;
-    position: relative;
-    margin: 0 auto 40px;
-    border: 1px solid #CCC;
+#layout {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
     -o-perspective: 800px;
     perspective: 800px;
 }
+#layout td,.item {
+    height: 128px;
+    width: 128px;
+}
+#layout {
+    border: none;
+}
+
 
 .item {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    cursor: pointer;
+    position: relative;
     -webkit-transition: -webkit-transform 1s;
     -moz-transition: -moz-transform 1s;
     -o-transition: -o-transform 1s;
@@ -51,11 +41,10 @@
     display: block;
     height: 100%;
     width: 100%;
-    line-height: 260px;
     color: white;
     text-align: center;
     font-weight: bold;
-    font-size: 140px;
+    font-size: 64px;
     position: absolute;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
