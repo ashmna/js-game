@@ -19,29 +19,23 @@ function Layout()
 
     var generateTable = function()
     {
-        var tableTrTdArr = [];
-        var tableTdArr = [];
-        var trCode = "";
-        var tdCode = "";
-
-        for(var t = 0; t < verticalCount; t++)
+        var trTdCode = "";
+        for(var tr = 0; tr < verticalCount; tr++)
         {
-            trCode = '<tr>';
-            tableTrTdArr.push(trCode);
+            trTdCode += '<tr>';
 
             for (var td = 0; td < horizontalCount; td++)
             {
-                tdCode = '<td></td>';
-                tableTrTdArr.push(tableTdArr[td] = tdCode);
+                trTdCode += '<td></td>';
             }
 
-            tableTrTdArr[t] = tableTrTdArr + "</tr>";
+            trTdCode += "</tr>";
         }
-        var tableArrTdTrString = tableTrTdArr.join('');
-
-        var tableCode = '<table  border = "1">' + tableArrTdTrString + '</table>';
-        table = $(tableCode);
+        var tableCode = '<table  border="1">' + trTdCode + '</table>';
+      // console.log(tableCode);
+        return tableCode;
     };
+
     var addElement = function(element)
     {
         layout.find('tr:eq('+currVerticalIndex+')')
