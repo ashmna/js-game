@@ -1,5 +1,5 @@
 function Layout()
-{   var  table;
+{
     var layout;
 
     var horizontalCount = 0;
@@ -10,37 +10,34 @@ function Layout()
 
     var newLayout = function()
     {
-        $(document.body).find('#layout').remove();
+        $('#container').find('#layout').remove();
         currHorizontalIndex = currVerticalIndex = 0;
-        var table = generateTable();
-        layout = $(table);
-        $(document.body).appendChild(layout);
+        generateTable();
+        $('#container').append(layout);
     };
 
     var generateTable = function()
     {
-        var trTdCode = "";
-        for(var tr = 0; tr < verticalCount; tr++)
+        var table = '<table id="layout" border="1">';
+
+        for(var i = 0; i < verticalCount; i++)
         {
-            trTdCode += '<tr>';
-
-            for (var td = 0; td < horizontalCount; td++)
+            table += '<tr>';
+            for (var j = 0; j < horizontalCount; j++)
             {
-                trTdCode += '<td></td>';
+                table += '<td></td>';
             }
-
-            trTdCode += "</tr>";
+            table += '</tr>';
         }
-        var tableCode = '<table  border="1">' + trTdCode + '</table>';
-      // console.log(tableCode);
-        return tableCode;
+        table += '</table>';
+        layout = $(table);
     };
 
     var addElement = function(element)
     {
         layout.find('tr:eq('+currVerticalIndex+')')
             .find('td:eq('+currHorizontalIndex+')')
-            .appendChild(element);
+            .append(element);
         currHorizontalIndex ++;
         if(currHorizontalIndex == horizontalCount)
         {

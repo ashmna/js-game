@@ -1,2 +1,4 @@
-var game = new Game();
-game.newGame();
+$(function(){
+    var game = new Game();
+    game.newGame();
+});
