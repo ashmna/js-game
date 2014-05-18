@@ -3,6 +3,10 @@ function Game()
     var instance = this;
     var player = new Player();
     var layout = new Layout();
+    var interval = 8000;
+
+    var lastItem;
+    var stop = false;
 
     var newGame = function ()
     {
@@ -17,6 +21,7 @@ function Game()
                 };
                 var item = new Item(param);
                 item.setGame(instance);
+                item.setInterval(interval);
                 var element = item.createItem();
                 layout.addElement(element);
                 scheme[i][j] = item;
@@ -24,10 +29,39 @@ function Game()
         }
     };
 
+    var logic = function(item)
+    {
+        if(lastItem) {
+            if(lastItem.getType() == item.getType() ) {
+                lastItem.done();
+                item.done();
+                var point = 0;
+                point += lastItem.getPoint();
+                point += item.getPoint();
+                point = Math.floor(point/2);
+                player.addPoint(point);
+            } else {
+                lastItem.hide();
+                item.hide();
+            }
+            lastItem = null;
+        } else {
+            lastItem = item;
+        }
+    };
+
     this.itemSelect = function(item) {
-        if(!item.isShow())
+        if(!item.isShow() && !stop)
         {
+            stop = true;
             item.show();
+            stop = false;
+            (function(item){
+                item.element().one('transitionend', function() {
+                    logic(item);
+                });
+            })(item);
+
         }
     };
 
