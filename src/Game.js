@@ -1,5 +1,6 @@
 function Game()
 {
+    var instance = this;
     var player = new Player();
     var layout = new Layout();
 
@@ -15,10 +16,18 @@ function Game()
                     type: scheme[i][j]
                 };
                 var item = new Item(param);
+                item.setGame(instance);
                 var element = item.createItem();
                 layout.addElement(element);
                 scheme[i][j] = item;
             }
+        }
+    };
+
+    this.itemSelect = function(item) {
+        if(!item.isShow())
+        {
+            item.show();
         }
     };
 

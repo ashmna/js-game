@@ -1,6 +1,9 @@
 function Item(param)
 {
+    var instance = this;
+    var game;
     var item;
+    var show = false;
     var createItem = function()
     {
         var itemCode = '<div class="item">'+
@@ -8,7 +11,14 @@ function Item(param)
             '<figure class="front">'+param.type+'</figure>'+
         '</div>';
         item = $(itemCode);
+        item.on("click", $.proxy(itemClick, instance));
     };
+    var itemClick = function()
+    {
+        game.itemSelect(this);
+    };
+
+
 
     this.createItem = function ()
     {
@@ -19,11 +29,24 @@ function Item(param)
     this.show = function()
     {
         item.addClass('flipped');
+        show = true;
     };
 
     this.hide = function()
     {
+        show = false;
         item.removeClass('flipped');
     };
-
+    this.setGame = function(gameInstance)
+    {
+        game = gameInstance;
+    };
+    this.getType = function()
+    {
+        return param.type;
+    };
+    this.isShow = function()
+    {
+        return show;
+    };
 }
