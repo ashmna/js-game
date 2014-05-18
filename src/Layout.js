@@ -14,39 +14,30 @@ function Layout()
         currHorizontalIndex = currVerticalIndex = 0;
         var table = generateTable();
         layout = $(table);
-        $(document.body).appendChild(layout);
+        $(document.body).append(layout);
     };
 
     var generateTable = function()
     {
-        var tableTrTdArr = [];
-        var tableTdArr = [];
-        var trCode = "";
-        var tdCode = "";
+        var table = '<table  border="1">';
 
-        for(var t = 0; t < verticalCount; t++)
+        for(var i = 0; i < verticalCount; i++)
         {
-            trCode = '<tr>';
-            tableTrTdArr.push(trCode);
-
-            for (var td = 0; td < horizontalCount; td++)
+            table += '<tr>';
+            for (var j = 0; j < horizontalCount; j++)
             {
-                tdCode = '<td></td>';
-                tableTrTdArr.push(tableTdArr[td] = tdCode);
+                table += '<td></td>';
             }
-
-            tableTrTdArr[t] = tableTrTdArr + "</tr>";
+            table += '</tr>';
         }
-        var tableArrTdTrString = tableTrTdArr.join('');
-
-        var tableCode = '<table  border = "1">' + tableArrTdTrString + '</table>';
-        table = $(tableCode);
+        table += '</table>';
+        return table;
     };
     var addElement = function(element)
     {
         layout.find('tr:eq('+currVerticalIndex+')')
             .find('td:eq('+currHorizontalIndex+')')
-            .appendChild(element);
+            .append(element);
         currHorizontalIndex ++;
         if(currHorizontalIndex == horizontalCount)
         {
