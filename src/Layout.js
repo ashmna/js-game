@@ -18,7 +18,7 @@ function Layout()
 
     var generateTable = function()
     {
-        var table = '<table id="layout" border="1">';
+        var table = '<table id="layout">';
 
         for(var i = 0; i < verticalCount; i++)
         {
