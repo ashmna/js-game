@@ -58,7 +58,8 @@ function Item(param)
     this.done = function()
     {
         clearTimeout(timeOut);
-        item.find('.front').css({'background': 'black'});
+        item.find('.front').addClass('item-done');
+        //find('.front').css({'background': 'black'});
         var endTime = new Date().getTime();
         var timePoint = interval - (endTime - startTime);
         point = timePoint / showCount;
