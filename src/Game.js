@@ -65,6 +65,12 @@ function Game()
         }
     };
 
+    this.itemHide = function(item) {
+        if(lastItem && lastItem == item) {
+            lastItem = null;
+        }
+    };
+
     var getSeizes = function(level)
     {
         var horizontal = 0 , vertical = 0;

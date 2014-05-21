@@ -53,6 +53,7 @@ function Item(param)
         show = false;
         item.removeClass('flipped');
         clearTimeout(timeOut);
+        game.itemHide(instance);
     };
 
     this.done = function()
