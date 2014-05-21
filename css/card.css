@@ -54,11 +54,12 @@
 
 .item .back {
     margin: 0px;
-    background: blue;
+    background:url(../image/BigEyes.png);
+    /*background: blue;*/
 }
 
 .item .front {
-    background: red;
+    /*background: red;*/
     margin: 0px;
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
@@ -66,6 +67,38 @@
     transform: rotateY(180deg);
 }
 
-.item .front-type-(1){
-    background:url(../image/BigEyes.png);
+.item-type-1 {
+    background:url(../image/BigEyes.png) no-repeat 0 0;
 }
+.item-type-2 {
+    background:url(../image/Black.png) no-repeat 0 0;
+}
+.item-type-3 {
+    background:url(../image/BlackPower.png) no-repeat 0 0;
+}
+.item-type-4 {
+    background:url(../image/Blue.png) no-repeat 0 0;
+}
+.item-type-5 {
+    background:url(../image/Brown.png) no-repeat 0 0;
+}
+.item-type-6 {
+    background:url(../image/Green.png) no-repeat 0 0;
+}
+.item-type-7 {
+    background:url(../image/Orange.png) no-repeat 0 0;
+}
+.item-type-8 {
+    background:url(../image/Pink.png) no-repeat 0 0;
+}
+.item-type-9 {
+    background:url(../image/Tentacles.png) no-repeat 0 0;
+}
+.item-type-10 {
+    background:url(../image/Tie.png) no-repeat 0 0;
+}
+.item-type-11 {
+    background:url(../image/White.png) no-repeat 0 0;
+}
+
+

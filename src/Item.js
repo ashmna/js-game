@@ -16,10 +16,8 @@ function Item(param)
 
 
         var itemCode = '<div class="item">'+
-            '<figure class="back">B</figure>'+
-            '<figure class="front">'+
-            '<img src="">'+
-            '</figure>'+
+            '<figure class="back"></figure>'+
+            '<figure class="front item-type-'+param.type+'"></figure>'+
             '</div>';
         $( "img" ).attr( 'src', "image/Green.png");
 
