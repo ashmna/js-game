@@ -10,13 +10,22 @@ function Item(param)
     var showCount = 0;
     var point = 0;
 
+
     var createItem = function()
     {
+
+
         var itemCode = '<div class="item">'+
             '<figure class="back">B</figure>'+
-            '<figure class="front">'+param.type+'</figure>'+
-        '</div>';
+            '<figure class="front">'+
+            '<img src="">'+
+            '</figure>'+
+            '</div>';
+        $( "img" ).attr( 'src', "image/Green.png");
+
         item = $(itemCode);
+
+
         item.on("click", $.proxy(itemClick, instance));
     };
     var itemClick = function()
@@ -55,7 +64,7 @@ function Item(param)
         var endTime = new Date().getTime();
         var timePoint = interval - (endTime - startTime);
         point = timePoint / showCount;
-        //console.log('timePoint [ '+timePoint+' ]  point [  '+point+'  ]');
+        console.log('timePoint [ '+timePoint+' ]  point [  '+point+'  ]');
     };
 
     this.getPoint = function()
