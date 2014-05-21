@@ -65,3 +65,7 @@
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
+
+.item .front-type-(1){
+    background:url(../image/BigEyes.png);
+}
