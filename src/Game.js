@@ -8,6 +8,9 @@ function Game()
     var lastItem;
     var itemTypeCount = 0;
 
+    var soundFlip = document.getElementById("flip");
+        soundFlip.volume=0.1;
+
     var newGame = function ()
     {
         var level = player.getLevel();
@@ -57,6 +60,8 @@ function Game()
         if(!item.isShow())
         {
             item.show();
+            soundFlip.load();
+            soundFlip.play();
             (function(item){
                 item.element().one('transitionend', function() {
                     logic(item);
