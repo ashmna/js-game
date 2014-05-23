@@ -1,8 +1,6 @@
 
 body {
-	background: url('../image/bgr.jpg') no-repeat ;
-
-
+	background: url('../image/background/west.jpg') no-repeat ;
 }
 
 #layout {
@@ -60,7 +58,7 @@ body {
 
 .item .back {
     margin: 0px;
-    background:url(../image/j.png);
+    background:url(../image/ui/back.png);
     /*background: blue;*/
 }
 
@@ -80,68 +78,68 @@ body {
 }
 
 .item-type-1 {
-    background:url(../image/BigEyes.png) no-repeat 0 0;
+    background:url(../image/item/BigEyes.png) no-repeat 0 0;
 }
 .item-type-2 {
-    background:url(../image/Black.png) no-repeat 0 0;
+    background:url(../image/item/Black.png) no-repeat 0 0;
 }
 .item-type-3 {
-    background:url(../image/BlackPower.png) no-repeat 0 0;
+    background:url(../image/item/BlackPower.png) no-repeat 0 0;
 }
 .item-type-4 {
-    background:url(../image/Blue.png) no-repeat 0 0;
+    background:url(../image/item/Blue.png) no-repeat 0 0;
 }
 .item-type-5 {
-    background:url(../image/Brown.png) no-repeat 0 0;
+    background:url(../image/item/Brown.png) no-repeat 0 0;
 }
 .item-type-6 {
-    background:url(../image/Green.png) no-repeat 0 0;
+    background:url(../image/item/Green.png) no-repeat 0 0;
 }
 .item-type-7 {
-    background:url(../image/Orange.png) no-repeat 0 0;
+    background:url(../image/item/Orange.png) no-repeat 0 0;
 }
 .item-type-8 {
-    background:url(../image/Pink.png) no-repeat 0 0;
+    background:url(../image/item/Pink.png) no-repeat 0 0;
 }
 .item-type-9 {
-    background:url(../image/Tentacles.png) no-repeat 0 0;
+    background:url(../image/item/Tentacles.png) no-repeat 0 0;
 }
 .item-type-10 {
-    background:url(../image/Tie.png) no-repeat 0 0;
+    background:url(../image/item/Tie.png) no-repeat 0 0;
 }
 .item-type-11 {
-    background:url(../image/White.png) no-repeat 0 0;
+    background:url(../image/item/White.png) no-repeat 0 0;
 }
 
 .item-done {
-    filter: grayscale(1);
-    -webkit-filter: grayscale(1);
-    -moz-filter: grayscale(1);
-    -o-filter: grayscale(1);
-    -ms-filter: grayscale(1);
+    filter: grayscale(0.7);
+    -webkit-filter: grayscale(0.7);
+    -moz-filter: grayscale(0.7);
+    -o-filter: grayscale(0.7);
+    -ms-filter: grayscale(0.7);
 }
 
-#iconeDiv{
+#icon-div {
     position: absolute;
     margin-left:750px;
     float:left;
 }
-#iconeImg
-{
+
+#icon-img {
     padding-left: 50px;
 }
-#pointDiv{
+
+#point-div {
     width: 150px;
     height: 150px;
-    background:url(../image/1.png) no-repeat 0 0;
+    background:url(../image/ui/score.png) no-repeat 0 0;
     padding: 19px 0px 0px 29px;
     margin-left: -7px;
     font-size: 30px;
     color: rgb(250, 250, 250);
-
 }
-#s{
 
+#s {
     margin: 30px;
     padding: 10px;
 }

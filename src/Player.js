@@ -10,16 +10,19 @@ function Player()
 
     this.points = function()
     {
+        var code = "<div id='point-div'>" + level + "<span id='s'>" + points + "</span> " + "</div>";
+        $('#icon-div').append(code);
 
-        var code = "<div id='pointDiv'>" + level + "<span id='s'>" + points + "</span> " + "</div>";
-        $('#iconeDiv').append(code);
+    };
 
-    }
     this.addPoint = function(point)
-    {    points += point;
+    {
+        points += point;
         $("#s").text(points);
 
-        console.clear();
-        console.log(points);
+        //console.clear();
+        //console.log(points);
     };
+
+    this.points();
 }

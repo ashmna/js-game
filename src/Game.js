@@ -6,15 +6,14 @@ function Game()
     var interval = 8000;
 
     var lastItem;
-    var stop = false;
+    var itemTypeCount = 0;
 
     var newGame = function ()
     {
         var level = player.getLevel();
         var seizes = getSeizes(level);
+        itemTypeCount = (seizes.horizontal * seizes.vertical) / 2;
         layout.newLayout(seizes.horizontal, seizes.vertical);
-        layout.createSettingIcone();
-        player.points();
         var scheme = getScheme(seizes.horizontal, seizes.vertical);
         for (var i = 0; i < scheme.length; i++) {
             for (var j = 0; j < scheme[i].length; j++) {
@@ -42,6 +41,7 @@ function Game()
                 point += item.getPoint();
                 point = Math.floor(point/2);
                 player.addPoint(point);
+                minusItemTypeCount();
             } else {
                 lastItem.hide();
                 item.hide();
@@ -52,12 +52,11 @@ function Game()
         }
     };
 
-    this.itemSelect = function(item) {
-        if(!item.isShow() && !stop)
+    this.itemSelect = function(item)
+    {
+        if(!item.isShow())
         {
-            stop = true;
             item.show();
-            stop = false;
             (function(item){
                 item.element().one('transitionend', function() {
                     logic(item);
@@ -67,9 +66,18 @@ function Game()
         }
     };
 
-    this.itemHide = function(item) {
+    this.itemHide = function(item)
+    {
         if(lastItem && lastItem == item) {
             lastItem = null;
+        }
+    };
+
+    var minusItemTypeCount = function()
+    {
+        itemTypeCount --;
+        if(itemTypeCount == 0) {
+            newGame();
         }
     };
 

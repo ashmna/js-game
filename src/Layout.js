@@ -15,18 +15,15 @@ function Layout()
         generateTable();
         $('#container').append(layout);
     };
-    this.createSettingIcone = function(){
+    this.createSettingIcon = function()
+    {
+        var  iconCode = "<img src = 'image/ui/setting.png' id='icon-img'>";
+        $('#icon-div').append(iconCode);
 
-
-        var  iconeCode = "<img src = 'image/images (9).png' id='iconeImg'>";
-        $('#iconeDiv').append(iconeCode);
-
-        $('#iconeImg').click(function()
-        {
+        $('#icon-img').click(function(){
             alert('hello Settings');
-
-        })
-    }
+        });
+    };
     var generateTable = function()
     {
         var table = '<table id="layout">';
@@ -69,4 +66,6 @@ function Layout()
     {
         addElement(element);
     };
+
+    this.createSettingIcon();
 }
