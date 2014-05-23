@@ -8,9 +8,17 @@ function Player()
         return level;
     };
 
-    this.addPoint = function(point)
+    this.points = function()
     {
-        points += point;
+
+        var code = "<div id='pointDiv'>" + level + "<span id='s'>" + points + "</span> " + "</div>";
+        $('#iconeDiv').append(code);
+
+    }
+    this.addPoint = function(point)
+    {    points += point;
+        $("#s").text(points);
+
         console.clear();
         console.log(points);
     };

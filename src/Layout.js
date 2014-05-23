@@ -15,7 +15,18 @@ function Layout()
         generateTable();
         $('#container').append(layout);
     };
+    this.createSettingIcone = function(){
 
+
+        var  iconeCode = "<img src = 'image/images (9).png' id='iconeImg'>";
+        $('#iconeDiv').append(iconeCode);
+
+        $('#iconeImg').click(function()
+        {
+            alert('hello Settings');
+
+        })
+    }
     var generateTable = function()
     {
         var table = '<table id="layout">';

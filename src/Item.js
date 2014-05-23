@@ -19,7 +19,6 @@ function Item(param)
             '<figure class="back"></figure>'+
             '<figure class="front item-type-'+param.type+'"></figure>'+
             '</div>';
-        $( "img" ).attr( 'src', "image/Green.png");
 
         item = $(itemCode);
 

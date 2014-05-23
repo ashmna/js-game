@@ -13,6 +13,8 @@ function Game()
         var level = player.getLevel();
         var seizes = getSeizes(level);
         layout.newLayout(seizes.horizontal, seizes.vertical);
+        layout.createSettingIcone();
+        player.points();
         var scheme = getScheme(seizes.horizontal, seizes.vertical);
         for (var i = 0; i < scheme.length; i++) {
             for (var j = 0; j < scheme[i].length; j++) {
