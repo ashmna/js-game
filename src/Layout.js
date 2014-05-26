@@ -17,12 +17,38 @@ function Layout()
     };
     this.createSettingIcon = function()
     {
-        var  iconCode = "<img src = 'image/ui/setting.png' id='icon-img'>";
-        $('#icon-div').append(iconCode);
+        var  iconCode = "<img src = 'image/ui/setting.png' id = 'icon-img'>";
+        var settingsWindow = '<span class = "settingsWindow">' + '</span>';
+        var code = "<img src = 'image/ui/sound.png' class = 'icone sound'>"+"</img>";
 
-        $('#icon-img').click(function(){
-            alert('hello Settings');
+        $('#icon-div').append(settingsWindow);
+        $('#icon-div').append(iconCode);
+        $('.settingsWindow').append(code);
+
+
+        $('#icon-img').click(function() {
+            $(".settingsWindow").toggleClass("click");
+
         });
+    $('.icone').click(function()
+    {
+        if($(this).hasClass('sound'))
+        {
+            $(this).removeClass('sound');
+            $(this).addClass('nosound');
+            $(this).attr('src', 'image/ui/nosound.png' );
+            $('source').attr("src",null);
+        }
+        else
+        {
+            $(this).removeClass('nosound');
+            $(this).addClass('sound');
+            $(this).attr('src', 'image/ui/sound.png' );
+            $('source').attr("src","sound/flip.mp3");
+        }
+
+
+    });
     };
     var generateTable = function()
     {
