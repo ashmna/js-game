@@ -1,4 +1,7 @@
 $(function(){
-    var game = new Game();
-    game.newGame();
+    $('.btn').click(function(){
+        var game = new Game();
+        game.startTheGame();
+    });
+
 });

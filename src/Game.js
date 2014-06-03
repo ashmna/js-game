@@ -4,19 +4,26 @@ function Game()
     var player = new Player();
     var layout = new Layout();
     var interval = 8000;
-
+    var winLevel = false;
     var lastItem;
     var itemTypeCount = 0;
 
     var soundFlip = document.getElementById("flip");
-        soundFlip.volume=0.1;
-
-    var newGame = function ()
+    var soundWin = document.getElementById("win");
+        soundWin.volume=0.9;
+        soundFlip.volume=0.9;
+    this.startTheGame = function()
     {
+        $("#startPage").remove();
+        newGame();
+    }
+    var newGame = function ()
+    {   $(".win").removeClass('true');
         var level = player.getLevel();
         var seizes = getSeizes(level);
         itemTypeCount = (seizes.horizontal * seizes.vertical) / 2;
         layout.newLayout(seizes.horizontal, seizes.vertical);
+        layout.getPlaceSettIcone();
         var scheme = getScheme(seizes.horizontal, seizes.vertical);
         for (var i = 0; i < scheme.length; i++) {
             for (var j = 0; j < scheme[i].length; j++) {
@@ -29,6 +36,7 @@ function Game()
                 var element = item.createItem();
                 layout.addElement(element);
                 scheme[i][j] = item;
+
             }
         }
     };
@@ -82,7 +90,10 @@ function Game()
     {
         itemTypeCount --;
         if(itemTypeCount == 0) {
-            newGame();
+            winLevel = true;
+            congratulations();
+
+
         }
     };
 
@@ -92,15 +103,21 @@ function Game()
         switch (level)
         {
             case 1:
+                horizontal = vertical = 2;
+                break;
             case 2:
+                horizontal =3; vertical =2;
+                break;
             case 3:
-                horizontal = vertical = 4;
+                horizontal = vertical =4;
                 break;
             case 4:
+                horizontal =6; vertical =6;
+                break;
             case 5:
             case 6:
             case 7:
-                horizontal = vertical = 6;
+                horizontal = vertical = 10;
                 break;
             case 8:
             case 9:
@@ -128,9 +145,9 @@ function Game()
         for (var i = 1; i <= count; i++) {
             schemeList.push(i,i);
         }
-        schemeList = shuffle(schemeList);
-        schemeList = shuffle(schemeList);
-        schemeList = shuffle(schemeList);
+      //  schemeList = shuffle(schemeList);
+        //schemeList = shuffle(schemeList);
+        //schemeList = shuffle(schemeList);
         var scheme = [];
         for (i = 0; i < vertical; i++) {
             var row = [];
@@ -164,6 +181,15 @@ function Game()
         }
 
         return array;
+    };
+
+    var congratulations = function()
+    { soundWin.load();
+        soundWin.play();
+        $(".win").addClass('true');
+        $('.nextLevelButton').click(function() {
+            newGame();
+        });
     };
 
     this.newGame = function()

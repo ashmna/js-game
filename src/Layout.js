@@ -50,6 +50,15 @@ function Layout()
 
     });
     };
+    this.getPlaceSettIcone = function()
+    {
+        var iconeDivPlace = horizontalCount*128+220;
+
+           $(".settingsWindow").css('width' , iconeDivPlace-30 + "px");
+           $(".settingsWindow").css('left' ,"-" + iconeDivPlace + "px");
+           $('#icon-div').css('margin-left', iconeDivPlace+ "px");
+    }
+
     var generateTable = function()
     {
         var table = '<table id="layout">';
@@ -85,7 +94,6 @@ function Layout()
         horizontalCount = horizontal;
         verticalCount = vertical;
         newLayout();
-        //layout =
     };
 
     this.addElement = function(element)

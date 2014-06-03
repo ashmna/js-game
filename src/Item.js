@@ -59,11 +59,10 @@ function Item(param)
     {
         clearTimeout(timeOut);
         item.find('.front').addClass('item-done');
-        //find('.front').css({'background': 'black'});
         var endTime = new Date().getTime();
         var timePoint = interval - (endTime - startTime);
         point = timePoint / showCount;
-        console.log('timePoint [ '+timePoint+' ]  point [  '+point+'  ]');
+      //  console.log('timePoint [ '+timePoint+' ]  point [  '+point+'  ]');
     };
 
     this.getPoint = function()
